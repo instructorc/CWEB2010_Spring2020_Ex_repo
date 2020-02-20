@@ -11,6 +11,8 @@ namespace lecture_example
 
 			Person[] people = new Person[2]; //Declares an array of objects
 
+			Console.Beep();
+
 			for (var i = 0; i < people.Length; i++)
 			{
 
@@ -29,9 +31,10 @@ namespace lecture_example
 
 				Console.WriteLine("Please enter interest: ");
 				interest = Console.ReadLine();
+			
 
 				//Instantiate a new people object instance
-				people[i] = new Person(interest, gender, age, name); //Calling the constructor
+				people[i] = new Person(name, age, interest); //Calling the constructor
 
 				
 
@@ -43,7 +46,7 @@ namespace lecture_example
 			for (var x = 0; x < people.Length; x++)
 			{
 				people[x].Greeting();
-				people[x].bio();
+				Console.WriteLine(people[x]);
 				Console.WriteLine("");
 			}
 
@@ -100,10 +103,11 @@ namespace lecture_example
 			this.Name = Name;
 		}
 
-		public Person(string Name, int Age, string Interst)
+		public Person(string Name, int Age, string Interest)
 		{
 			this.Name = Name;
 			this.Age = Age;
+			this.Gender = "Unknown";
 			this.Interest = Interest;
 		}
 
@@ -159,6 +163,11 @@ namespace lecture_example
 		public void Greeting()
 		{
 			Console.WriteLine($"Hi! I'm {Name}");
+		}
+
+		public override string ToString()
+		{
+			return String.Format($"{Name} is {Age} years old and gender is {Gender}.  They like {Interest}");
 		}
 
 
