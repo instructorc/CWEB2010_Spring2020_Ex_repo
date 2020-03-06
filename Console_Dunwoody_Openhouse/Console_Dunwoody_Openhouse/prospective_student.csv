@@ -1,3 +1,5 @@
-Name,Email,Term_Start,time,number_of_visits
-Tony,tbon@dunwoody.edu,Fall 2023,Evening,3
-Noah,nalexander@dunwoody.edu,Fall 2024,Day,1
+Name,Email,Term_Start,time_of_day,number_of_visits
+Noah,nalexander@dunwoody.edu,Fall 2024,Evening,2
+Mike,mMastaw@dunwoody.edu,Fall 2023,Day,1
+Khali,khali@dunwoody.edu,Fall 2018,Day,1
+Khali,khali@dunwoody.edu,Fall 2018,Day,1

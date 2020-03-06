@@ -16,13 +16,14 @@ namespace Console_Dunwoody_Openhouse
 			//StreamReader read;
 			string line;
 			string[] data;
+			List<Prospective_Student> prospectList = null;
 
 			try
 			{
 				FileStream input = new FileStream(PATH, FileMode.Open, FileAccess.Read);
 				StreamReader read = new StreamReader(input);
 				line = read.ReadLine(); //primer
-				List<Prospective_Student> prospectList = new List<Prospective_Student>();
+				prospectList = new List<Prospective_Student>();
 
 				//Looping structure that's going to read in all of my records
 				while (!read.EndOfStream)
@@ -37,16 +38,35 @@ namespace Console_Dunwoody_Openhouse
 
 				}
 
-				read.Close();
-				input.Close();
+				read.Dispose();
+				input.Dispose();
 
 			}
 			catch (Exception e)
 			{
 				Console.WriteLine(e.Message);
 			}
-          
-        }
+
+			//Add a new Object instance
+			prospectList.Add(new Prospective_Student("Khali", "khali@dunwoody.edu", "Fall 2018", "Day", 1));
+
+
+			//Write to a file
+			FileStream output = new FileStream(PATH, FileMode.Create, FileAccess.Write);
+			StreamWriter write = new StreamWriter(output);
+			write.WriteLine("Name,Email,Term_Start,time_of_day,number_of_visits");
+
+			foreach (Prospective_Student x in prospectList)
+			{
+				//Write out each record
+				write.WriteLine($"{x.Name},{x.Email},{x.StartTerm},{x.Time},{x.NumberOfVisits.ToString()}");
+			}
+
+			write.Dispose();
+			output.Dispose();
+
+
+		}
     }
 
 	class Prospective_Student
