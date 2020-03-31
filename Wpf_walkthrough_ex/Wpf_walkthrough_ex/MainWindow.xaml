@@ -1,0 +1,14 @@
+﻿<Window x:Class="Wpf_walkthrough_ex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_walkthrough_ex"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+		<Button x:Name="first_btn" Content="Button" HorizontalAlignment="Left" Margin="208,152,0,0" VerticalAlignment="Top" Width="135" Height="100"/>
+
+
+	</Grid>
+</Window>
