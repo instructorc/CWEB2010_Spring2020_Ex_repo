@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:dunwoody_openhouse_wpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<Style x:Key = "TriggerStyle" TargetType = "Button">
+			<Setter Property = "Foreground" Value = "Blue" />
+			<Style.Triggers>
+				<Trigger Property = "IsMouseOver" Value = "True">
+					<Setter Property = "Background" Value = "White" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</Application.Resources>
 </Application>

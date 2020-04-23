@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dunwoody_openhouse_wpf"
-        xmlns:Properties="clr-namespace:dunwoody_openhouse_wpf.Properties" x:Class="dunwoody_openhouse_wpf.MainWindow"
+        xmlns:Properties="clr-namespace:dunwoody_openhouse_wpf.Properties" x:Name="selection_window" x:Class="dunwoody_openhouse_wpf.MainWindow"
         mc:Ignorable="d"
-        Title="Welcome - Dunwoody Open House Slection Navigation Screen" WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18" >
+        Title="Welcome - Dunwoody Open House Selection Navigation Screen"  WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18" >
 	<DockPanel>
 		<Image Height="auto" Source="/Resources/sidebanner.png"  VerticalAlignment="Top" HorizontalAlignment="Left">
 			<Image.DataContext>
@@ -14,18 +14,19 @@
 			</Image.DataContext>
 		</Image>
 		<StackPanel DockPanel.Dock="Right">
-			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,100" Background="White" Foreground="Black" Content="X" FontSize="32"  Click="Exit_Button" BorderBrush="{x:Null}" />
+			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,100" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
 			<Label Height="auto" FontSize="62" HorizontalContentAlignment="Center">
 				<Label.Content>
 					<AccessText TextWrapping="Wrap" TextAlignment="Center" Text="Dunwoody Open House Program Information App"/>
 				</Label.Content>
 				
 			</Label>
+			<Button Content="Click Here to Submit a Prospective Entry Form" MaxWidth="500" MinWidth="300" Background="Black" Foreground="White" FontSize="22" Height="50" Click="prospect_btn_click"/>
 			<StackPanel Orientation="Horizontal"  Width="auto" Height="auto" HorizontalAlignment="Center">
 				<Button MaxWidth="500" MinWidth="300" Foreground="White" Padding="10"  FontSize="44" Background="#aa1d2c" Height="220" Margin="30">
 					<TextBlock Text="Computer Networking" TextWrapping="Wrap" TextAlignment="Center"/>
 				</Button>
-				<Button MaxWidth="500" MinWidth="300"  FontSize="44" Foreground="White" Padding="10" Background="#aa1d2c" Height="220" Margin="30" UseLayoutRounding="False" VerticalAlignment="Center" Click="GoToWebAlumniWindow">
+				<Button MaxWidth="500" MinWidth="300" Style = "{StaticResource TriggerStyle}"  FontSize="44" Foreground="White" Padding="10" Background="#aa1d2c" Height="220" Margin="30" UseLayoutRounding="False" VerticalAlignment="Center"  Click="GoToWebAlumniWindow">
 					<TextBlock Text="Web Development and Database Programming" TextWrapping="Wrap" TextAlignment="Center"/>
 				</Button>
 			</StackPanel>

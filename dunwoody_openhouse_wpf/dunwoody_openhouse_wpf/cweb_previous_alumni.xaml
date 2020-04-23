@@ -5,14 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dunwoody_openhouse_wpf"
         mc:Ignorable="d"
-        Title="cweb_previous_alumni" WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18" >
+        Title="cweb_previous_alumni" WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18">
 	<DockPanel>
 		<Image Height="auto" Source="/Resources/sidebanner.png"  VerticalAlignment="Top" HorizontalAlignment="Left">
-
 		</Image>
-		<StackPanel>
-			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,100" Background="White" Foreground="Black" Content="X" FontSize="32"  Click="Exit_Button" BorderBrush="{x:Null}" />
-			<Grid Margin="20">
+		<StackPanel DockPanel.Dock="Right">
+			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,100" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
+			<Grid>
 
 				<Grid.RowDefinitions>
 					<RowDefinition Height = "Auto" />
@@ -28,23 +27,22 @@
 				<Label Name = "nameLabel" Margin = "2">_Name:</Label>
 
 				<TextBox Name = "nameText" Grid.Column = "1" Margin = "2" 
-			 Text = "{Binding Name, Mode = OneWay}"/>
+         Text = "{Binding Name, Mode = OneWay}"/>
 
 				<Label Name = "ageLabel" Margin = "2" Grid.Row = "1">_Age:</Label>
 
 				<TextBox Name = "ageText" Grid.Column = "1" Grid.Row = "1" Margin = "2" 
-			 Text = "{Binding Age, Mode = OneWay}"/>
+         Text = "{Binding Age, Mode = OneWay}"/>
 
 				<StackPanel Grid.Row = "2" Grid.ColumnSpan = "2">
 					<Button Content = "_Show..." Click="Button_Click" />
 					<ListBox x:Name="cweb_listbox" Height="200">
-						
+
 					</ListBox>
 				</StackPanel>
 
 			</Grid>
-
 		</StackPanel>
+
 	</DockPanel>
-	
 </Window>

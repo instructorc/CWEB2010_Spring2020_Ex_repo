@@ -27,6 +27,7 @@ namespace dunwoody_openhouse_wpf
 
 		private void Exit_Button(object sender, RoutedEventArgs e)
 		{
+			
 			this.Close();
 		}
 
@@ -34,6 +35,14 @@ namespace dunwoody_openhouse_wpf
 		{
 			cweb_previous_alumni cwebAlumniWindow = new cweb_previous_alumni();
 			cwebAlumniWindow.Show();
+			this.Close();
+		}
+
+		private void prospect_btn_click(object sender, RoutedEventArgs e)
+		{
+			ProspectWindow navigateToProspect = new ProspectWindow();
+			navigateToProspect.Show();
+			this.Close();
 		}
 	}
 }

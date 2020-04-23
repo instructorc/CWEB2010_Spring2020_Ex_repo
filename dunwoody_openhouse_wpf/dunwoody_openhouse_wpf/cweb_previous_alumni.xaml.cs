@@ -19,25 +19,12 @@ namespace dunwoody_openhouse_wpf
 	/// </summary>
 	public partial class cweb_previous_alumni : Window
 	{
-		/**Person person = new Person {
-			Name = "Salman", Age = 26,
-			
-		};**/
-		List<Person> personList = new List<Person>() {
-			new Person("John", 32),
-			new Person("Salman", 26),
-			new Person("John", 32),
-			new Person("Michael", 12)
-		};
+
+
+		//Constructor
 		public cweb_previous_alumni()
 		{
 			InitializeComponent();
-			this.DataContext = personList;
-			cweb_listbox.ItemsSource = personList;
-		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
 
 		}
 
@@ -46,47 +33,12 @@ namespace dunwoody_openhouse_wpf
 			this.Close();
 
 		}
-	}
-	public class Person
-	{
 
-		private string nameValue;
-		public Person()
+		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 
 		}
+	}//End of cweb_previous_alumni class
 
-		public Person(string name, int age)
-		{
-			nameValue = name;
-			ageValue = age;
-		}
 
-		public string Name
-		{
-			get { return nameValue; }
-			set { nameValue = value; }
-		}
-
-		private double ageValue;
-
-		public double Age
-		{
-			get { return ageValue; }
-
-			set
-			{
-				if (value != ageValue)
-				{
-					ageValue = value;
-				}
-			}
-		}
-
-		public override string ToString()
-		{
-			return String.Format($"{Name} , {Age}");
-		}
-
-	}
 }
