@@ -26,7 +26,7 @@
 				<Button MaxWidth="500" MinWidth="300" Foreground="White" Padding="10"  FontSize="44" Background="#aa1d2c" Height="220" Margin="30">
 					<TextBlock Text="Computer Networking" TextWrapping="Wrap" TextAlignment="Center"/>
 				</Button>
-				<Button MaxWidth="500" MinWidth="300" Style = "{StaticResource TriggerStyle}"  FontSize="44" Foreground="White" Padding="10" Background="#aa1d2c" Height="220" Margin="30" UseLayoutRounding="False" VerticalAlignment="Center"  Click="GoToWebAlumniWindow">
+				<Button MaxWidth="500" MinWidth="300"  FontSize="44" Foreground="White" Padding="10" Background="#aa1d2c" Height="220" Margin="30" UseLayoutRounding="False" VerticalAlignment="Center"  Click="GoToWebAlumniWindow">
 					<TextBlock Text="Web Development and Database Programming" TextWrapping="Wrap" TextAlignment="Center"/>
 				</Button>
 			</StackPanel>

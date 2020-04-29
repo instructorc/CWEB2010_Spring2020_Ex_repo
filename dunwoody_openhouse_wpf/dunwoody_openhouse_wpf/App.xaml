@@ -4,13 +4,13 @@
              xmlns:local="clr-namespace:dunwoody_openhouse_wpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-		<Style x:Key = "TriggerStyle" TargetType = "Button">
-			<Setter Property = "Foreground" Value = "Blue" />
-			<Style.Triggers>
-				<Trigger Property = "IsMouseOver" Value = "True">
-					<Setter Property = "Background" Value = "White" />
-				</Trigger>
-			</Style.Triggers>
-		</Style>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

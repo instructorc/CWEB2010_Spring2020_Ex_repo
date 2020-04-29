@@ -4,44 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dunwoody_openhouse_wpf"
-        mc:Ignorable="d"
+		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+		mc:Ignorable="d"
+		TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
         Title="cweb_previous_alumni" WindowState="Maximized" WindowStyle="None" FontFamily="Tw Cen MT" FontSize="18">
 	<DockPanel>
 		<Image Height="auto" Source="/Resources/sidebanner.png"  VerticalAlignment="Top" HorizontalAlignment="Left">
 		</Image>
 		<StackPanel DockPanel.Dock="Right">
-			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,100" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
-			<Grid>
-
-				<Grid.RowDefinitions>
-					<RowDefinition Height = "Auto" />
-					<RowDefinition Height = "Auto" />
-					<RowDefinition Height = "*" />
-				</Grid.RowDefinitions>
-
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width = "Auto" />
-					<ColumnDefinition Width = "200"/>
-				</Grid.ColumnDefinitions>
-
-				<Label Name = "nameLabel" Margin = "2">_Name:</Label>
-
-				<TextBox Name = "nameText" Grid.Column = "1" Margin = "2" 
-         Text = "{Binding Name, Mode = OneWay}"/>
-
-				<Label Name = "ageLabel" Margin = "2" Grid.Row = "1">_Age:</Label>
-
-				<TextBox Name = "ageText" Grid.Column = "1" Grid.Row = "1" Margin = "2" 
-         Text = "{Binding Age, Mode = OneWay}"/>
-
-				<StackPanel Grid.Row = "2" Grid.ColumnSpan = "2">
-					<Button Content = "_Show..." Click="Button_Click" />
-					<ListBox x:Name="cweb_listbox" Height="200">
-
-					</ListBox>
-				</StackPanel>
-
-			</Grid>
+			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,10" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
+			<materialDesign:Card Padding="32" Margin="16">
+				<TextBlock>My First Material Design App</TextBlock>
+			</materialDesign:Card>
+			<DataGrid x:Name="alumni_grid" AutoGenerateColumns="False" Margin="0 15 0 0">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+					<DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+					<DataGridTextColumn Header="Employer" Binding="{Binding Employer}"/>
+					<DataGridTextColumn Header="Salary Range" Binding="{Binding SalaryRange}"/>
+					<DataGridTextColumn Header="Grad Year" Binding="{Binding GradYear}"/>
+				</DataGrid.Columns>
+			</DataGrid>
 		</StackPanel>
 
 	</DockPanel>

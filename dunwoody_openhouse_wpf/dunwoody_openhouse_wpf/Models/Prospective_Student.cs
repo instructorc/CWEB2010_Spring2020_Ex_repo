@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace dunwoody_openhouse_wpf.Models
 {
-	class Prospective_Student
+	class Prospective_Student : Student
 	{
 		//Name	Email	Term_Start	time	number_of_visits
-		public string Name { get; set; }
-		public string Email { get; set; }
+
 		public string StartTerm { get; set; }
 		public string Time { get; set; }
 		public int NumberOfVisits { get; set; }

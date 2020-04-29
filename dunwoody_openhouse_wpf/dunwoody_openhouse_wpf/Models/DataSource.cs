@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,17 @@ namespace dunwoody_openhouse_wpf.Models
 
 
 		/**Mehod that reads the data into my program **/
-		public List<Prospective_Student> readData()
+		public ObservableCollection<Prospective_Student> readData()
 		{
 			string line;
 			string[] data;
-			List<Prospective_Student> prospectList = null; //Local
+			ObservableCollection<Prospective_Student> prospectList = null; //Local
 			try
 			{
 				FileStream input = new FileStream(PATH, FileMode.Open, FileAccess.Read);
 				StreamReader read = new StreamReader(input);
 				line = read.ReadLine(); //primer
-				prospectList = new List<Prospective_Student>();
+				prospectList = new ObservableCollection<Prospective_Student>();
 
 				//Looping structure that's going to read in all of my records
 				while (!read.EndOfStream)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,9 @@ namespace dunwoody_openhouse_wpf
     /// </summary>
     public partial class ProspectWindow : Window
     {
+		//Alumni somebody = new Alumni("Rich", "RWagner@dunwoody.edu", "Dunwoody", "200,000 - 230,000", "Spring 1984");
 		DataSource source = new DataSource();
-		List<Prospective_Student> prospectWindowList = null;
+		ObservableCollection<Prospective_Student> prospectWindowList = null;
 		Prospective_Student aStudent;
 		
         public ProspectWindow()
@@ -48,10 +50,10 @@ namespace dunwoody_openhouse_wpf
 			prospectWindowList.Add(aStudent);
 
 			//Repopulating the datagrid with the addition of a new student
-			prospectEntry_grid.ItemsSource = prospectWindowList;
+			//prospectEntry_grid.ItemsSource = prospectWindowList;
 
 			//Refresh the data grid
-			prospectEntry_grid.Items.Refresh();
+			//prospectEntry_grid.Items.Refresh();
 
 		}
 	}
