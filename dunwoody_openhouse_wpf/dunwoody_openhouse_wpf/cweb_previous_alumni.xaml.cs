@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using dunwoody_openhouse_wpf.Models;
+using Newtonsoft.Json;
 
 namespace dunwoody_openhouse_wpf
 {
@@ -21,12 +22,40 @@ namespace dunwoody_openhouse_wpf
 	/// </summary>
 	public partial class cweb_previous_alumni : Window
 	{
-		ObservableCollection<Student> alumList = new ObservableCollection<Student>()
-		{
-			new Alumni("Rich Wagner", "rwagner@dunwoody.edu", "Dunwoody College", "200,000 - 230,000", "Spring 1984"),
-			new Alumni("Miles Morales", "mmoralies@spiderman.edu", "The World Bank", "100,000 - 150,000", "Fall 2018"),
-			new Prospective_Student("Lennox Lewis", "LLewis@bbc.com", "Spring 2020", "Hybrid/Online", 1)
-		};
+		/**			this.Name = Name;
+			this.Email = Email;
+			Employer = emp;
+			SalaryRange = sal;
+			GradYear = gradYear;**/
+
+		static string json = @"[
+				{
+					'Name': 'Rich Wagner',
+					'Email': 'rwagner@dunwoody.edu',
+					'Employer': 'Dunwoody College',
+					'SalaryRange': '200,00 - 230,000',
+					'GradYear': 'Spring 1984'
+
+				},
+				{
+					'Name': 'Miles Morales',
+					'Email': 'mmoralies@spiderman.edu',
+					'Employer': 'The World Bank',
+					'SalaryRange': '100,00 - 150,000',
+					'GradYear': 'Fall 2018'
+
+				},
+				{
+					'Name': 'Bryan Nelson',
+					'Email': 'bnelson@dunwoody.edu',
+					'Employer': 'Mortenson Constructions',
+					'SalaryRange': '70 - 100,000',
+					'GradYear': 'Fall 2012'
+
+				}
+
+		]";
+		ObservableCollection<Alumni> alumList = JsonConvert.DeserializeObject<ObservableCollection<Alumni>>(json);
 
 		//Constructor
 		public cweb_previous_alumni()
@@ -46,6 +75,25 @@ namespace dunwoody_openhouse_wpf
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 
+		}
+
+		private void search_alumni(object sender, TextChangedEventArgs e)
+		{
+			if (search_alumni_box.Text != null)
+			{
+				alumni_grid.ItemsSource = alumList.Where(x => x.Name.ToString().Contains(search_alumni_box.Text));
+			}
+			else
+			{
+				alumni_grid.ItemsSource = alumList;
+			}
+		}
+
+		private void selected_alumni(object sender, SelectionChangedEventArgs e)
+		{
+			var SelectedAlumni = alumni_grid.SelectedIndex;
+			Alumni aAlumni = ((Alumni)alumni_grid.Items[SelectedAlumni]);
+			alumni_name_tb.Text = aAlumni.Name;
 		}
 	}//End of cweb_previous_alumni class
 

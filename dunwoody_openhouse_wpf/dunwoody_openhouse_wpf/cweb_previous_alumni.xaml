@@ -17,9 +17,17 @@
 		<StackPanel DockPanel.Dock="Right">
 			<Button Width="auto" Height="auto" HorizontalAlignment="Right" Margin="10,10,10,10" Background="White" Foreground="Black" Content="X" FontSize="44"  Click="Exit_Button" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.504" />
 			<materialDesign:Card Padding="32" Margin="16">
-				<TextBlock>My First Material Design App</TextBlock>
+				
+				<StackPanel Orientation="Horizontal">
+					<Label Content="Name"/>
+					<TextBox x:Name="alumni_name_tb" Width="200" Margin="10 0 0 0" />
+				</StackPanel>
 			</materialDesign:Card>
-			<DataGrid x:Name="alumni_grid" AutoGenerateColumns="False" Margin="0 15 0 0">
+			<StackPanel Orientation="Horizontal" Margin="20, 0 0 0">
+				<Label Content="Search by Name: "/>
+				<TextBox x:Name="search_alumni_box"  MinWidth="200" MaxWidth="300" Margin="10 0 0 0" TextChanged="search_alumni"/>
+			</StackPanel>
+			<DataGrid x:Name="alumni_grid" SelectionMode="Single" AutoGenerateColumns="False" Margin="0 15 0 0" SelectionChanged="selected_alumni">
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
 					<DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
